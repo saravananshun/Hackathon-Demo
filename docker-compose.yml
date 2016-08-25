@@ -1,0 +1,10 @@
+node1:
+    container_name: Payment-Demo
+    build: ./Payment-Demo
+    ports:
+        - "8080"
+node2:
+    container_name: Savings-Demo
+    build: ./Savings-Demo
+    ports:
+        - "8080"
