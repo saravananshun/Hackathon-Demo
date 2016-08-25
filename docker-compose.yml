@@ -1,10 +1,21 @@
-node1:
-    container_name: Payment-Demo
-    build: ./Payment-Demo
+account-overview:
+    container_name: account-overview
+    hostname: account-overview
+    build: ./Account-Overview
     ports:
-        - "8080"
-node2:
-    container_name: Savings-Demo
-    build: ./Savings-Demo
+        - "32501:8080"
+    links:
+        - payment-service
+        - savings-service
+payment-service:
+    container_name: payment-service
+    hostname: payment-service
+    build: ./Payment-Service
     ports:
-        - "8080"
+        - "32502:8080"
+savings-service:
+    container_name: savings-service
+    hostname: savings-service
+    build: ./Savings-Service
+    ports:
+        - "32503:8080"

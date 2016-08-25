@@ -1,8 +1,0 @@
-com/hackathon/Skill.class
-com/hackathon/Developer.class
-com/hackathon/Application.class
-com/hackathon/DevelopersController.class
-com/hackathon/DeveloperRepository.class
-com/hackathon/SkillRepository.class
-com/hackathon/repository/AccountRepository.class
-com/hackathon/domain/Account.class
