@@ -25,8 +25,8 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		List<Account> accounts = new ArrayList<>();
-		accounts.add(new Account(56784567, "Savings Product1", "NLRABO56784567", 567));
-        accounts.add(new Account(56784568, "Savings Product1", "NLRABO56784568", 89));
+		accounts.add(new Account(56784567, "Savings Product1", "Arno Balk" , "EUR",  "NL88 RABO 0191 7032 01", 567));
+        accounts.add(new Account(56784568, "Savings Product1", "Kurl Jessie", "EUR", "NL88 RABO 0191 7032 02", 89));
 
         accountRepository.save(accounts);
 	}

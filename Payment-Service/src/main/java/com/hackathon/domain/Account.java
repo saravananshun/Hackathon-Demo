@@ -13,6 +13,8 @@ public class Account {
     private long id;
     private int accountNumber;
     private String productName;
+    private String alias;
+    private String currency;
     private String iBanAccountNumber;
     private double balance;
 
@@ -20,11 +22,14 @@ public class Account {
         super();
     }
 
-    public Account(int accountNumber, String productName, String iBanAccountNumber, double balance){
+    public Account(int accountNumber, String productName, String alias, String currency,
+                   String iBanAccountNumber, double balance){
         this.accountNumber = accountNumber;
         this.productName = productName;
         this.iBanAccountNumber = iBanAccountNumber;
         this.balance = balance;
+        this.alias = alias;
+        this.currency = currency;
     }
 
     public long getId() {
@@ -66,4 +71,23 @@ public class Account {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+
 }

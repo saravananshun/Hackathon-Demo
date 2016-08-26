@@ -28,8 +28,10 @@ public class Application implements CommandLineRunner {
 
 
 		List<Account> accounts = new ArrayList<>();
-		accounts.add(new Account(123456781, "Payment Product1", "NLRABO123456781", 2500));
-        accounts.add(new Account(123456782, "Payment Product1", "NLRABO123456782", 200));
+		accounts.add(new Account(123456781, "Payment Product1", "N.Q.PASTIN", "EUR" , "NL88 RABO 0191 7032 57", 2500));
+        accounts.add(new Account(123456782, "Payment Product1", "B. Nyalan", "EUR" , "NL88 RABO 0191 7032 60 ", 200));
+		accounts.add(new Account(123456782, "Payment Product1", "James Wyan", "EUR" , "NL88 RABO 0191 7032 70 ", 100));
+		accounts.add(new Account(123456782, "Payment Product1", "Jeron Wolf", "EUR" , "NL88 RABO 0191 7032 80 ", 300));
 
         accountRepository.save(accounts);
 	}

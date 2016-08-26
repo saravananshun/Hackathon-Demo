@@ -122,17 +122,17 @@
                             <tbody>
                             <tr ng-repeat="account in paymentaccounts">
                                 <td>
-                                    <span title="B. Nyalanfccbbbbdkbd" class="as_alias">B. Nyalanfccbbbbdkbd</span>
+                                    <span title="B. Nyalanfccbbbbdkbd" class="as_alias">{{account.alias}}</span>
                                 </td>
                                 <td>
                           <span class="as_number">
-                            NL88 RABO 0191 7032 57
+                            {{account.iBanAccountNumber}}
                           </span> <br/>
                                     <span title="Bouwdepot" class="as_type as_gray">Bouwdepot</span>
                                 </td>
-                                <td>EUR</td>
+                                <td>{{account.currency}}</td>
                                 <td>
-                                    <span class="as_amount_whole">50.000,</span>
+                                    <span class="as_amount_whole">{{account.balance}},</span>
                                     <span class="as_amount_cents">00</span>
                                 </td>
                             </tr>
@@ -146,19 +146,19 @@
                     <div class="panel-body">
                         <table class="table table-striped">
                             <tbody>
-                            <tr ng-repeat="account in paymentaccounts">
+                            <tr ng-repeat="account in savingsaccounts">
                                 <td>
-                                    <span title="B. Nyalanfccbbbbdkbd" class="as_alias">B. Nyalanfccbbbbdkbd</span>
+                                    <span title="B. Nyalanfccbbbbdkbd" class="as_alias">{{account.alias}}</span>
                                 </td>
                                 <td>
                           <span class="as_number">
-                            NL88 RABO 0191 7032 57
+                            {{account.iBanAccountNumber}}
                           </span> <br/>
                                     <span title="Bouwdepot" class="as_type as_gray">Bouwdepot</span>
                                 </td>
-                                <td>EUR</td>
+                                <td>{{account.currency}}</td>
                                 <td>
-                                    <span class="as_amount_whole">50.000,</span>
+                                    <span class="as_amount_whole">{{account.balance}},</span>
                                     <span class="as_amount_cents">00</span>
                                 </td>
                             </tr>

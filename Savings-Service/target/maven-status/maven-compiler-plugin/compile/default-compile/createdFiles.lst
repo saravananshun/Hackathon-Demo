@@ -1,5 +1,5 @@
 com/hackathon/SavingsController.class
-com/hackathon/repository/AccountRepository.class
 com/hackathon/domain/Account.class
+com/hackathon/repository/AccountRepository.class
 com/hackathon/CorsFilter.class
 com/hackathon/Application.class
