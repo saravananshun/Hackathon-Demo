@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html ng-app="accountsApp">
+<head>
+    <title>Accounts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="container">
+    <div ng-controller="accountsController">
+        <div class="panel panel-default">
+            <div class="panel-heading">Payment</div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Account Number</th>
+                        <th>Product Name</th>
+                        <th>iBan</th>
+                        <th>Balance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="account in paymentaccounts" style="width:auto !important;">
+                        <td>{{account.accountNumber}}</td>
+                        <td>{{account.productName}}</td>
+                        <td>{{account.iBanAccountNumber}}</td>
+                        <td>{{account.balance}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Savings</div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Account Number</th>
+                        <th>Product Name</th>
+                        <th>iBan</th>
+                        <th>Balance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="account in savingsaccounts" style="width:auto !important;">
+                        <td>{{account.accountNumber}}</td>
+                        <td>{{account.productName}}</td>
+                        <td>{{account.iBanAccountNumber}}</td>
+                        <td>{{account.balance}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/webjars/angularjs/1.4.9/angular.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+<script src="/js/app.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css"/>
+
+</body>
+</html>
