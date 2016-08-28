@@ -1,14 +1,14 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get -y upgrade
+
 # Add oracle java 7 repository
 RUN apt-get -y install software-properties-common
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get -y update
 
-# Accept the Oracle Java license
+# Accept the Oracle Java license & Install Oracle Java
 RUN echo "oracle-java7-installer shared/accepted-oracle-license-v1-1 boolean true" | debconf-set-selections
-# Install Oracle Java
 RUN apt-get -y install oracle-java7-installer git maven curl
 
 
@@ -19,7 +19,6 @@ RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
 # Create known_hosts
 RUN touch /root/.ssh/known_hosts
-
 RUN mkdir /virtualsource
 RUN git clone https://github.com/saravananshun/spring-mvc-angularjs.git /virtualsource/spring-mvc-angularjs
 RUN cd /virtualsource/spring-mvc-angularjs && mvn package
