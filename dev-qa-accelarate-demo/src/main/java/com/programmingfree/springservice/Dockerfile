@@ -23,6 +23,8 @@ RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 # Create known_hosts
 RUN touch /root/.ssh/known_hosts
 
+RUN rm -r /virtualsource
+
 RUN mkdir /virtualsource
 RUN git clone -b ${BRANCH} https://github.com/saravananshun/${REPO_NAME}.git /virtualsource/${REPO_NAME}
 RUN cd /virtualsource/${REPO_NAME} && mvn package

@@ -1,6 +1,7 @@
 package com.programmingfree.springservice;
 
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
@@ -15,6 +16,7 @@ public class DockerRestController {
         return "Success";
     }
 
+    @Async
     private void buildDocker(String repo, String branch) {
         System.out.println("Build Docker Command.............. ");
         try {
@@ -37,21 +39,18 @@ public class DockerRestController {
                 System.out.print(line + "\n");
             }
 
-            System.out.println("Build Docker Command waiting ....... ");
-            proc.waitFor();
-            System.out.println("Build Docker Command waiting finished ....... ");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println("Build Docker Command Finished ");
-        runDocker();
+        runDocker(branch);
     }
 
-    private void runDocker() {
+    private void runDocker(String branch) {
         System.out.println("Running Docker Command.............. ");
         try {
-            String command = "sudo docker run saravananshun/dev-image";
+            String command = "sudo docker run -d --name "+branch+" saravananshun/dev-image";
             Process proc = Runtime.getRuntime().exec(command);
 
             InputStream is = proc.getInputStream();
@@ -68,10 +67,6 @@ public class DockerRestController {
             while ((line = reader.readLine()) != null) {
                 System.out.print(line + "\n");
             }
-
-            System.out.println("Running Docker Command waiting ....... ");
-            proc.waitFor();
-            System.out.println("Running Docker Command waiting finished ....... ");
 
         } catch (Exception e) {
             e.printStackTrace();
